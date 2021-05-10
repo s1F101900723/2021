@@ -4,17 +4,124 @@
  <meta charset="utf-8">
  <title>Japanese Culture</title>
  <meta name="description" content="ディスクリプションを入力">
- <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <!--meta name="viewport" content="width=device-width, initial-scale=1.0"-->
+
+ <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+ <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
  <link rel="stylesheet" href="sample.css">
  <!-- [if lt IE 9] -->
  <script src="text.js"></script>
+ <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
  <!-- [endif] -->
- <script src="main.js"></script>
+ <script src="data.js"></script>
  </head>
  <body>
  <!----- header----->
- <header>ヘッダー</header>
- <nav>ナビ</nav>
+ <section id="pagedata"></section>
+ <!--header>ヘッダー</header-->
+<!--section>
+  <div class="container">
+      <div class="carousel">
+          <input type="radio" name="slides" checked="checked" id="slide-1">
+          <input type="radio" name="slides" id="slide-2">
+          <input type="radio" name="slides" id="slide-3">
+          <input type="radio" name="slides" id="slide-4">
+          <input type="radio" name="slides" id="slide-5">
+          <input type="radio" name="slides" id="slide-6">
+          <ul class="carousel__slides">
+              <li class="carousel__slide">
+                  <figure>
+                      <div>
+                          <img src="https://picsum.photos/id/1041/800/450" alt="">
+                      </div>
+                      <figcaption>
+                          Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                          <span class="credit">Photo: Tim Marshall</span>
+                      </figcaption>
+                  </figure>
+              </li>
+              <li class="carousel__slide">
+                  <figure>
+                      <div>
+                          <img src="https://picsum.photos/id/1043/800/450" alt="">
+                      </div>
+                      <figcaption>
+                          Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                          <span class="credit">Photo: Christian Joudrey</span>                            
+                      </figcaption>
+                  </figure>
+              </li>
+              <li class="carousel__slide">
+                  <figure>
+                      <div>
+                          <img src="https://picsum.photos/id/1044/800/450" alt="">
+                      </div>
+                      <figcaption>
+                          Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                          <span class="credit">Photo: Steve Carter</span>                            
+                      </figcaption>
+                  </figure>
+              </li>
+              <li class="carousel__slide">
+                  <figure>
+                      <div>
+                          <img src="https://picsum.photos/id/1045/800/450" alt="">
+                      </div>
+                      <figcaption>
+                          Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                          <span class="credit">Photo: Aleksandra Boguslawska</span>                            
+                      </figcaption>
+                  </figure>
+              </li>
+              <li class="carousel__slide">
+                  <figure>
+                      <div>
+                          <img src="https://picsum.photos/id/1049/800/450" alt="">
+                      </div>
+                      <figcaption>
+                          Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                          <span class="credit">Photo: Rosan Harmens</span>                            
+                      </figcaption>
+                  </figure>
+              </li>
+              <li class="carousel__slide">
+                  <figure>
+                      <div>
+                          <img src="https://picsum.photos/id/1052/800/450" alt="">
+                      </div>
+                      <figcaption>
+                          Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                          <span class="credit">Photo: Annie Spratt</span>                            
+                      </figcaption>
+                  </figure>
+              </li>
+          </ul>    
+          <ul class="carousel__thumbnails">
+              <li>
+                  <label for="slide-1"><img src="https://picsum.photos/id/1041/150/150" alt=""></label>
+              </li>
+              <li>
+                  <label for="slide-2"><img src="https://picsum.photos/id/1043/150/150" alt=""></label>
+              </li>
+              <li>
+                  <label for="slide-3"><img src="https://picsum.photos/id/1044/150/150" alt=""></label>
+              </li>
+              <li>
+                  <label for="slide-4"><img src="https://picsum.photos/id/1045/150/150" alt=""></label>
+              </li>
+              <li>
+                  <label for="slide-5"><img src="https://picsum.photos/id/1049/150/150" alt=""></label>
+              </li>
+              <li>
+                  <label for="slide-6"><img src="https://picsum.photos/id/1052/150/150" alt=""></label>
+              </li>
+          </ul>
+      </div>
+  </div>
+</section-->
  <!----- /header ----->
  
  <!----- main ----->
@@ -36,5 +143,52 @@
  <!----- footer ----->
  <footer>フッター</footer>
  <!----- /footer ----->
+ <!-- The core Firebase JS SDK is always required and must be listed first -->
+ <script src="https://www.gstatic.com/firebasejs/8.4.2/firebase-app.js"></script>
+
+ <!-- TODO: Add SDKs for Firebase products that you want to use
+      https://firebase.google.com/docs/web/setup#available-libraries -->
+ <script src="https://www.gstatic.com/firebasejs/8.4.2/firebase-analytics.js"></script>
+ <script src="https://www.gstatic.com/firebasejs/8.4.1/firebase-auth.js"></script>
+ <script src="https://www.gstatic.com/firebasejs/8.4.1/firebase-firestore.js"></script>
+    <script>
+
+    // Your web app's Firebase configuration
+    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+    var firebaseConfig = {
+        apiKey: "AIzaSyCLgalbznAglRwlXdPbMBguALto1xqJz1Q",
+        authDomain: "japanese-culture-293e6.firebaseapp.com",
+        projectId: "japanese-culture-293e6",
+        storageBucket: "japanese-culture-293e6.appspot.com",
+        messagingSenderId: "153847878065",
+        appId: "1:153847878065:web:c11e45da8bba3f99d66d90",
+        measurementId: "G-G3K7ELHBP3"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    firebase.analytics();
+    var db = firebase.firestore();
+    var docRef = db.collection("pages").doc("sushi");
+    let htmltext = "";
+
+    docRef.get().then((doc) => {
+        if (doc.exists) {
+            var doc1 = doc.data();
+            console.log(doc1);
+            htmltext += '<h5>'+doc1.title + '</h5>';
+            htmltext += '<h5>'+doc1.text + '</h5>';
+            htmltext += '<img src="'+doc1.img + '">';
+            document.getElementById("pagedata").innerHTML = htmltext;
+        } else {
+            // doc.data() will be undefined in this case
+            console.log("No such document!");
+        }
+    }).catch((error) => {
+        console.log("Error getting document:", error);
+    });
+
+    
+    </script>
  </body>
+
 </html>
