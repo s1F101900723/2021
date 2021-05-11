@@ -6,7 +6,7 @@
 
 
   section {
-    background: #faebab;
+    /*background: #faebab;*/
   }
 
   body {
@@ -19,7 +19,7 @@
     -webkit-font-smoothing: antialiased;
     text-align: center;
     color:#fff;
-    padding-top:10em;
+    padding-top:5em;
   }
   
   .material-menu-wrapper {

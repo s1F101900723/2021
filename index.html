@@ -76,27 +76,16 @@
   </div>
   
 <main>
-
+    <h1>
+        Japanese 
+        <a href="" class="typewrite" data-period="2000" data-type='[ "Culture", "Food", "Place", "Music" ]'>
+          <span class="wrap"></span>
+        </a>
+     </h1>
  <section id="pagedata"></section>
+ 
 
- <article>
- 
- <h1>
-    Japanese 
-    <a href="" class="typewrite" data-period="2000" data-type='[ "Culture", "Food", "Place", "Music" ]'>
-      <span class="wrap"></span>
-    </a>
- </h1>
- <section>
- <h2>見出し２</h2>
- <p>コンテンツの内容</p>
- </section>
- </article>
- <!----- /main ----->
- 
- <!----- footer ----->
- <footer>フッター</footer>
- <!----- /footer ----->
+
  <!-- The core Firebase JS SDK is always required and must be listed first -->
  <script src="https://www.gstatic.com/firebasejs/8.4.2/firebase-app.js"></script>
 
@@ -122,10 +111,8 @@
     firebase.initializeApp(firebaseConfig);
     firebase.analytics();
     var url = location.search.substring(4);
-    let str = url;
-    console.log(url);
     var db = firebase.firestore();
-    var docRef = db.collection("pages").doc(str);
+    var docRef = db.collection("pages").doc(url);
     let htmltext = "";
 
     docRef.get().then((doc) => {
@@ -133,8 +120,9 @@
             var doc1 = doc.data();
             console.log(doc1);
             htmltext += '<h1>'+doc1.title + '</h1>';
-            htmltext += '<h3>'+doc1.text + '</h3>';
             htmltext += '<img src="'+doc1.img + '">';
+            htmltext += '<h3>'+doc1.text + '</h3>';
+
             document.getElementById("pagedata").innerHTML = htmltext;
         } else {
             // doc.data() will be undefined in this case
