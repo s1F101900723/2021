@@ -112,6 +112,14 @@
     font-size: 5vw;
     color: tomato;
     font-weight: 300;
+    font-size: max(0px, 20px);
+  }
+  a.dropdown-item{
+    text-decoration: none;
+    font-size: 2vw;
+    color: tomato;
+    font-weight: 300;
+    text-align: right;
   }
   
   .material-hamburger {
