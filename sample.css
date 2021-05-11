@@ -1,9 +1,4 @@
-body {
-    background-color:#ce3635;
-    text-align: center;
-    color:#fff;
-    padding-top:10em;
-  }
+
   
   * { color:#fff; text-decoration: none;}
 
@@ -22,6 +17,9 @@ body {
     overflow: hidden;
     text-rendering: geometricPrecision;
     -webkit-font-smoothing: antialiased;
+    text-align: center;
+    color:#fff;
+    padding-top:10em;
   }
   
   .material-menu-wrapper {
