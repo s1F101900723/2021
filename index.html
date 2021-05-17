@@ -45,14 +45,14 @@
     <nav class="drawer_nav_wrapper">
       <ul class="drawer_nav">
         <li>
-          <a href="#">メニュー1 </a>
+          <a href="./index.html">HOME</a>
         </li>
         <li>
-          <a href="#">メニュー2 </a>
+          <a href="#">Food</a>
           <span class="touch-btn"><i class="blogicon-chevron-down lg"></i></span>
           <ul class="second-level">
             <li>
-              <a href="">サブメニュー1</a>
+              <a href="./index.html?id=sushi">Sushi</a>
             </li>
             <li>
               <a href="">サブメニュー2</a>
@@ -121,13 +121,15 @@
   </script>
   
 <main>
+ <div id="pagedata"></div>
+ <div class="type_div">
   <h1 class="first_typewrite">
     Japanese 
-      <span class="typewrite" data-period="2000" data-type='[ "Culture", "Food", "Place", "Music" ]'></span>
- </h1>
- <section id="pagedata"></section>
- <section>
-  <img src="./960h/3.png">
+    <span class="typewrite" data-period="2000" data-type='[ "Culture", "Food", "Place", "Music" ]'></span>
+  </h1>
+</div>
+ <section class="img2">
+  <img src="./960h/3.png" class="img1">
   <img src="./960h/3.png">
   <img src="./960h/3.png">
  </section>
@@ -154,7 +156,8 @@ let last_url=result[result.length - 1];
 let htmltext = "";
 if (last_url=="index.html"){
   console.log(last_url);
-  htmltext += '<div class="bg-slider"><h1 class="bg-slider_title">Japanese Culture</h1></div>';
+  //htmltext += '<div class="bg-slider"><h1 class="bg-slider_title">Japanese Culture</h1></div>';
+  htmltext += '<div class="bg-slider"></div>';
   document.getElementById("pagedata").innerHTML = htmltext;
 }
 else{
