@@ -11,7 +11,7 @@
     font-family: "Roboto", "Arial", sans-serif;
     height: 100vh;
     line-height: 1.3;
-    background: tomato;
+
 
     text-rendering: geometricPrecision;
     -webkit-font-smoothing: antialiased;
@@ -86,9 +86,59 @@
     }
   }
 
-  
+
   /*@media screen and (min-width:1001px) {
     .type_div {
       top: 50px;
     }
   }*/
+
+
+
+
+  /*フッターボタン*/
+
+  .ul_01{
+    background-color: tomato;
+  }
+  li.li_01{
+    text-decoration: none;
+    text-align: center;
+    list-style-type: none;
+  }
+
+  .btn-circle-1 label {
+    display: inline-block;
+    text-decoration: none;
+    background: #87befd;
+    color: #FFF;
+    width: 120px;
+    height: 120px;
+    line-height: 120px;
+    border-radius: 50%;
+    text-align: center;
+    overflow: hidden;
+    transition: .4s;
+    cursor :pointer;
+  }
+  
+  .btn-circle-1 label:hover {
+    background: #668ad8;
+  }
+  .btn-circle-1 input {
+    display: none;
+  }
+  .btn-circle-1 .hidden_show {
+    height: 0;
+    padding: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: 0.8s;
+}
+
+/*クリックで中身表示*/
+.btn-circle-1 input:checked ~ .hidden_show {
+    padding: 10px 0;
+    height: auto;
+    opacity: 1;
+}
