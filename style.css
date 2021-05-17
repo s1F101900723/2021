@@ -75,16 +75,15 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 
 /* PC非表示 */
 
-@media screen and (min-width:1001px) {
+/*@media screen and (min-width:1001px) {
 	.pc-hidden {
 		display: none;
 		text-align: center;
 	}
-}
+}*/
+/*@media screen and (min-width: 1001px) {
 
-@media screen and (min-width: 1001px) {
-
-	/* ドロップダウンメニュー2階層目 */
+	ドロップダウンメニュー2階層目 
 	.drawer_menu .drawer_nav li ul.second-level {
 		visibility: hidden;
 		list-style-type: none;
@@ -99,34 +98,34 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 		visibility: visible;
 		z-index: 1;
 		top: 50px;
-		/* PC用メニューの高さに合わせる */
+		PC用メニューの高さに合わせる
 		transition: all .3s;
 	}
 
 	.drawer_menu .drawer_nav li:hover ul.second-level li {
 		width: 200px;
-		/* ドロップダウンメニューボタン横幅 */
+		ドロップダウンメニューボタン横幅 
 		height: 50px;
-		/* Pドロップダウンメニューボタン高さ */
+		Pドロップダウンメニューボタン高さ
 		text-align: center;
 	}
 
 	.drawer_menu .drawer_nav li:hover ul.second-level li a {
 		display: block;
-		/*background-color: tomato;*/
-		/* ドロップダウンメニューの文字の背景色 */
+		background-color: tomato;
+		ドロップダウンメニューの文字の背景色 
 		color: #fff;
-		/* ドロップダウンメニューの文字色 */
+		ドロップダウンメニューの文字色
 		font-size: 100%;
 		text-decoration: none;
 		line-height: 50px;
-		/* Pドロップダウンメニューボタン高さ */
+		Pドロップダウンメニューボタン高さ
 		text-align: center;
 	}
 
 	.drawer_menu .drawer_nav li:hover ul.second-level li a:hover {
 		background-color: #999;
-		/* ドロップダウンメニューマウスホバー背景色 */
+		ドロップダウンメニューマウスホバー背景色 
 	}
 
 	.touch-btn {
@@ -135,7 +134,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 	}
 }
 
-/*+++ Default Button Color +++*/
++++ Default Button Color +++*/
 
 .drawer_menu .drawer_button {
 	color: #fff;
@@ -151,7 +150,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 
 /* 1000px以下 */
 
-@media screen and (max-width: 1000px) {
+@media screen and (min-width: 0px) { /*max-width: 1000px;からmin-width: 0px;に変更*/
 	.drawer_menu .drawer_bg {
 		width: 100%;
 		height: 100%;

@@ -85,8 +85,10 @@
       font-size: 36px;
     }
   }
-  @media screen and (min-width:1001px) {
+
+  
+  /*@media screen and (min-width:1001px) {
     .type_div {
       top: 50px;
     }
-  }
+  }*/
