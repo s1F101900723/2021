@@ -3,8 +3,19 @@
   * { color:#fff; text-decoration: none;}
 
 
+
   section {
     /*background: #faebab;*/
+  }
+  h1{
+    color: #fff;
+  }
+  h3.div_h3 {
+    color: #fff;
+    width: 80%;
+    display: inline-block;
+    text-align: center;
+    padding-top: 20px;
   }
 
   body {
@@ -12,7 +23,7 @@
     height: 100vh;
     line-height: 1.3;
 
-
+    background-color: rgb(255, 166, 151);
     text-rendering: geometricPrecision;
     -webkit-font-smoothing: antialiased;
     text-align: center;
@@ -20,11 +31,37 @@
 
   }
   img{
-    width: 100%;
+    width: 70%;
+    padding-top: 20px;
   }
   .img2{
+    padding-top: 1ch;
     width: 100%;
-    top: -100px;
+    background-color: #fff;
+    line-height: 1.3;
+    margin-bottom: 0;
+    padding-bottom: 0;
+    background-color: rgb(255, 166, 151);
+  }
+  .img3{
+    width: 100%;
+    height: 320px;
+    background-position:center center;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    background-color:rgba(255, 99, 71, 0.27);
+    background-blend-mode:lighten;
+  }
+  .img3_title{
+    color: #fff;
+    font-size: 48px;
+    line-height: 1.5;
+    font-weight: bold;
+    text-align:center;
+    
   }
 
 
@@ -63,6 +100,8 @@
     line-height: 1.5;
     font-weight: bold;
     text-align:center;
+    
+
   }
   .type_div{
     width: 100%;
@@ -81,64 +120,163 @@
     }
   }
   @media screen and (max-width:450px) {
-    .bg-slider_title {
+    .img3_title {
       font-size: 36px;
     }
   }
 
 
-  /*@media screen and (min-width:1001px) {
-    .type_div {
-      top: 50px;
-    }
-  }*/
+
+
+
+.btn{
+  width:150px;
+
+  /*font-family: 'HGP行書体',cursive;*/
+
+}
+.btn a{
+  display:block;
+  text-decoration: none;
+  background:tomato;
+  color:#fff;
+  text-align:center;
+  /*border:5px solid #ffffff;*/
+  padding: 5px;
+  font-size:16px;
+  font-weight:bold;
+  border-radius:15px;
+
+  transition: all 0.5s ease;
+}
+.btn a:hover{
+
+  margin-left:0px;
+  margin-top:0px;
+  /*border:5px solid #FFFFFF;*/
+  box-shadow:none;
+
+  background-image: url(https://firebasestorage.googleapis.com/v0/b/japanese-culture-293e6.appspot.com/o/AdobeStock_sushi.jpeg?alt=media&token=bac62a1c-5a62-402d-9587-a5ae65e4e924) ;
+  background-color:rgba(255, 99, 71, 0.6);
+  background-blend-mode:lighten;
+  background-size: cover;
+  color:#FFFFFF;
+}
+.green_tea a:hover{
+  background-image: url(https://firebasestorage.googleapis.com/v0/b/japanese-culture-293e6.appspot.com/o/AdobeStock_sado_1.jpeg?alt=media&token=410fcc98-1585-45c7-92ad-dd853baed67a) ;
+  background-color:rgba(255, 99, 71, 0.6);
+  background-blend-mode:lighten;
+}
+.kimono a:hover{
+  background-image: url(https://t3.ftcdn.net/jpg/03/79/77/54/240_F_379775464_dbkV4CsNtJCF7vcciNdOd81TUB1JgW1A.jpg) ;
+  background-color:rgba(255, 99, 71, 0.6);
+  background-blend-mode:lighten;
+}
+.train a:hover{
+
+  background-image: url(https://free-materials.com/adm/wp-content/uploads/2019/01/adpDSC_2632-750x500.jpg) ;
+  background-color:rgba(255, 99, 71, 0.6);
+  background-blend-mode:lighten;
+}
+.sky a:hover{
+
+  background-image: url(https://firebasestorage.googleapis.com/v0/b/japanese-culture-293e6.appspot.com/o/AdobeStock_sky.jpeg?alt=media&token=88abb8d4-cc60-4881-be90-838d83dca6cf) ;
+  background-color:rgba(255, 99, 71, 0.6);
+  background-blend-mode:lighten;
+}
+.tower a:hover{
+
+  background-image: url(https://free-materials.com/adm/wp-content/uploads/2016/03/6d3c0a674e79490362073f5a8ca5d771-500x332.jpg) ;
+  background-color:rgba(255, 99, 71, 0.6);
+  background-blend-mode:lighten;
+}
+.fuji a:hover{
+
+  background-image: url(https://firebasestorage.googleapis.com/v0/b/japanese-culture-293e6.appspot.com/o/AdobeStock_fuji.jpeg?alt=media&token=daa90533-23f9-4c64-9a75-ec4c5806edd3) ;
+  background-color:rgba(255, 99, 71, 0.6);
+  background-blend-mode:lighten;
+}
+.music a:hover{
+  background-image: url(https://free-materials.com/adm/wp-content/uploads/2019/10/adpDSC_9792-1024x683.jpg);
+  background-color:rgba(255, 99, 71, 0.6);
+  background-blend-mode:lighten;
+}
 
 
 
 
-  /*フッターボタン*/
 
-  .ul_01{
-    background-color: tomato;
-  }
-  li.li_01{
-    text-decoration: none;
-    text-align: center;
-    list-style-type: none;
-  }
 
-  .btn-circle-1 label {
-    display: inline-block;
-    text-decoration: none;
-    background: #87befd;
-    color: #FFF;
-    width: 120px;
-    height: 120px;
-    line-height: 120px;
-    border-radius: 50%;
-    text-align: center;
-    overflow: hidden;
-    transition: .4s;
-    cursor :pointer;
+
+
+  .channel_01{
+
+    font-size:24px;
+    font-weight:bold;
+    padding-top: 10px;
+    /*font-family: 'HGP行書体',cursive;*/
+  
+  
+  
   }
   
-  .btn-circle-1 label:hover {
-    background: #668ad8;
-  }
-  .btn-circle-1 input {
-    display: none;
-  }
-  .btn-circle-1 .hidden_show {
-    height: 0;
-    padding: 0;
-    overflow: hidden;
-    opacity: 0;
-    transition: 0.8s;
-}
+    .hidden_show{
+      background-color: rgb(255, 166, 151);
+  
+    }
 
-/*クリックで中身表示*/
-.btn-circle-1 input:checked ~ .hidden_show {
-    padding: 10px 0;
-    height: auto;
-    opacity: 1;
-}
+    .btn-circle-1 label {
+      display: inline-block;
+      text-decoration: none;
+      width: 100%;
+      text-align: center;
+      border-radius:10px;
+      transition: 0.5s;
+      cursor :pointer;
+
+  
+    }
+    
+
+    .btn-circle-1 input {
+      display: none;
+    }
+    .btn-circle-1 .hidden_show {
+      height: 0;
+      padding: 0;
+      overflow: hidden;
+      opacity: 0;
+      -webkit-transition: max-height 0.5s;
+      transition: max-height 0.5s;
+  }
+  
+  /*クリックで中身表示*/
+  .btn-circle-1 input:checked ~ .hidden_show {
+  
+      height: auto;
+      opacity: 1;
+  }
+  
+
+  .title-border {
+    display: flex;
+    align-items: center;
+    color: #fff;
+    }
+    .title-border:before,
+    .title-border:after {
+    border-top: 2px solid;
+    content: "";
+    flex-grow: 1;
+    }
+    .title-border:before {
+    margin-right: 1rem;
+    }
+    .title-border:after {
+    margin-left: 1rem;
+
+    }
+    .title-border:hover{
+      color: tomato;
+    }
+    
