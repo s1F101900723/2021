@@ -52,40 +52,28 @@
           <a href="#">Food</a>
           <span class="touch-btn"><i class="blogicon-chevron-down lg"></i></span>
           <ul class="second-level">
-            <li>
-              <a href="./index.html?id=sushi">Sushi</a>
-            </li>
-            <li>
-              <a href="./index.html?id=green_tea">Green tea</a>
-            </li>
+            <div id="food_menu_top"></div>
           </ul>
         </li>
         <li>
           <a href="#">Spot</a>
           <span class="touch-btn"><i class="blogicon-chevron-down lg"></i></span>
           <ul class="second-level">
-            <li>
-              <a href="./index.html?id=mt_fuji">Mt. Fuji</a>
-            </li>
-            <li>
-              <a href="./index.html?id=tokyotower">Tokyo Tower</a>
-            </li>
-            <li>
-              <a href="./index.html?id=skytree">Tokyo Skytree</a>
-            </li>
+            <div id="spot_menu_top"></div>
           </ul>
         </li>
         <li>
           <a href="#">Music</a>
           <span class="touch-btn"><i class="blogicon-chevron-down lg"></i></span>
+          <ul class="second-level">
+            <div id="music_menu_top"></div>
+          </ul>
         </li>
         <li>
           <a href="#">Culture</a>
           <span class="touch-btn"><i class="blogicon-chevron-down lg"></i></span>
           <ul class="second-level">
-            <li>
-              <a href="./index.html?id=kimono">Kimono</a>
-            </li>
+            <div id="culture_menu_top"></div>
           </ul>
         </li>
         <li>
@@ -95,6 +83,7 @@
             <li>
               <a href="https://world.jorudan.co.jp/mln/en/?sub_lang=nosub">Train</a>
             </li>
+            <div id="route_menu_top"></div>
           </ul>
         </li>
       </ul>
@@ -140,18 +129,14 @@
     <span class="typewrite" data-period="2000" data-type='[ "Culture", "Food", "Spot", "Music" ]'></span>
   </h1>
 </div>
+
  <section class="img2">
   <div class="btn-circle-1">
     <label for="label1"><p class="channel_01 title-border" >Food</p></label>
     <input type="checkbox" id="label1"/>
     <div class="hidden_show">
       <!--非表示ここから--> 
-      <div class="btn">
-        <a href="./index.html?id=sushi">Sushi</a>
-      </div>
-      <div class="btn green_tea">
-        <a href="./index.html?id=green_tea">Green tea</a>
-      </div>
+      <div id="food_menu"></div>
       <!--ここまで-->
     </div>
   </div>
@@ -161,15 +146,7 @@
       <input type="checkbox" id="label2"/>
       <div class="hidden_show">
         <!--非表示ここから--> 
-        <div class="btn fuji">
-          <a href="./index.html?id=mt_fuji">Mt. Fuji</a>
-        </div>
-        <div class="btn tower">
-          <a href="./index.html?id=tokyotower">Tokyo Tower</a>
-        </div>
-        <div class="btn sky">
-          <a href="./index.html?id=skytree">Tokyo Skytree</a>
-        </div>
+        <div id="spot_menu"></div>
         <!--ここまで-->
       </div>
     </div>
@@ -178,24 +155,7 @@
       <input type="checkbox" id="label3"/>
       <div class="hidden_show">
         <!--非表示ここから--> 
-        <div class="btn music">
-          <a href="#">music</a>
-        </div>
-        <div class="btn music">
-          <a href="#">music</a>
-        </div>
-        <div class="btn music">
-          <a href="#">music</a>
-        </div>
-        <div class="btn music">
-          <a href="#">music</a>
-        </div>
-        <div class="btn music">
-          <a href="#">music</a>
-        </div>
-        <div class="btn music">
-          <a href="#">music</a>
-        </div>
+        <div id="music_menu"></div>
 
         <!--ここまで-->
       </div>
@@ -205,9 +165,7 @@
       <input type="checkbox" id="label4"/>
       <div class="hidden_show">
         <!--非表示ここから--> 
-        <div class="btn kimono">
-          <a href="./index.html?id=kimono">Kimono</a>
-        </div>
+        <div id="culture_menu"></div>
         <!--ここまで-->
       </div>
     </div>
@@ -219,6 +177,7 @@
         <div class="btn train">
           <a href="https://world.jorudan.co.jp/mln/en/?sub_lang=nosub">Train</a>
         </div>
+        <div id="route_menu"></div>
         <!--ここまで-->
       </div>
     </div>
@@ -240,17 +199,21 @@
     // Your web app's Firebase configuration
     // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 var str=location.href;
+var url = location.search.substring(4);
 let result = str.split("/").filter(e => Boolean(e));
 let last_url=result[result.length - 1];
 let htmltext = "";
-if (last_url=="index.html"){
-  console.log(last_url);
-  //htmltext += '<div class="bg-slider"><h1 class="bg-slider_title">Japanese Culture</h1></div>';
-  htmltext += '<div class="bg-slider"></div>';
-  document.getElementById("pagedata").innerHTML = htmltext;
-}
-else{
-      var firebaseConfig = {
+let htmltext_food = "";
+let htmltext_spot = "";
+let htmltext_music = "";
+let htmltext_culture = "";
+let htmltext_route = "";
+let htmltext_food_top = "";
+let htmltext_spot_top = "";
+let htmltext_music_top = "";
+let htmltext_culture_top = "";
+let htmltext_route_top = "";
+var firebaseConfig = {
           apiKey: "AIzaSyCLgalbznAglRwlXdPbMBguALto1xqJz1Q",
           authDomain: "japanese-culture-293e6.firebaseapp.com",
           projectId: "japanese-culture-293e6",
@@ -259,46 +222,90 @@ else{
           appId: "1:153847878065:web:c11e45da8bba3f99d66d90",
           measurementId: "G-G3K7ELHBP3"
       };
-      // Initialize Firebase
-      firebase.initializeApp(firebaseConfig);
-      firebase.analytics();
-      var url = location.search.substring(4);
-      var db = firebase.firestore();
-      var docRef = db.collection("pages").doc(url);
 
-      docRef.get().then((doc) => {
-          if (doc.exists) {
-              var doc1 = doc.data();
-              console.log(doc1);
-              for (let i = 0; i < doc1.img.length; i++){
-                
-                if(i==0){
-                  htmltext += '<div class="img3" style="background-image: url(' +doc1.img[i] +') ;"><div class="img3_title">'+ doc1.title + '</div></div>';
+if (last_url=="index.html"){
+  console.log(last_url);
+  //htmltext += '<div class="bg-slider"><h1 class="bg-slider_title">Japanese Culture</h1></div>';
+  htmltext += '<div class="bg-slider"></div>';
+  document.getElementById("pagedata").innerHTML = htmltext;
+}
 
-                  console.log(doc1.title);
-                  if(i>=0 && i < doc1.text.length){
-                    htmltext += '<h3 class="div_h3">'+doc1.text[i] + '</h3>';
-                    console.log(doc1.text[i]);
-                  }
-                }
-                else{
-                  htmltext += '<div class="img4"><img src="'+doc1.img[i] + '"></div>';
-                  if(i>=0 && i < doc1.text.length){
-                    htmltext += '<h3 class="div_h3">'+doc1.text[i] + '</h3>';
-                    console.log(doc1.text[i]);
-                    }
-                }
+firebase.initializeApp(firebaseConfig);
+firebase.analytics();
+var db = firebase.firestore();
+var menudoc= db.collection("pages");
+
+
+
+menudoc.get().then((querySnapshot) => {
+  console.log(querySnapshot.docs.length);
+  for (var j=0; j<querySnapshot.docs.length; j++){
+    console.log(querySnapshot.docs[j].id);
+    li_doc = querySnapshot.docs[j].data();
+    if(li_doc.type=="Food"){
+      htmltext_food += '<style>.'+querySnapshot.docs[j].id+ ' a:hover{background-image: url('+li_doc.img_2[0]+') ;background-color:rgba(255, 99, 71, 0.6);background-blend-mode:lighten;}</style>'+'<div class="btn '+ querySnapshot.docs[j].id +'"><a href='+ li_doc.li_url +'>'+li_doc.title+'</a></div>';
+      htmltext_food_top +='<li><a href="'+li_doc.li_url+'">'+li_doc.title+'</a></li>';
+    }
+    if(li_doc.type=="Spot"){
+      htmltext_spot += '<style>.'+querySnapshot.docs[j].id+ ' a:hover{background-image: url('+li_doc.img_2[0]+') ;background-color:rgba(255, 99, 71, 0.6);background-blend-mode:lighten;}</style>'+'<div class="btn '+ querySnapshot.docs[j].id +'"><a href='+ li_doc.li_url +'>'+li_doc.title+'</a></div>';
+      htmltext_spot_top += '<li><a href="'+li_doc.li_url+'">'+li_doc.title+'</a></li>';
+    }
+    if(li_doc.type=="Music"){
+      htmltext_music += '<style>.'+querySnapshot.docs[j].id+ ' a:hover{background-image: url('+li_doc.img_2[0]+') ;background-color:rgba(255, 99, 71, 0.6);background-blend-mode:lighten;}</style>'+'<div class="btn '+ querySnapshot.docs[j].id +'"><a href='+ li_doc.li_url +'>'+li_doc.title+'</a></div>';
+      htmltext_music_top +='<li><a href="'+li_doc.li_url+'">'+li_doc.title+'</a></li>';
+    }
+    if(li_doc.type=="Culture"){
+      htmltext_culture += '<style>.'+querySnapshot.docs[j].id+ ' a:hover{background-image: url('+li_doc.img_2[0]+') ;background-color:rgba(255, 99, 71, 0.6);background-blend-mode:lighten;}</style>'+'<div class="btn '+ querySnapshot.docs[j].id +'"><a href='+ li_doc.li_url +'>'+li_doc.title+'</a></div>';
+      htmltext_culture_top +='<li><a href="'+li_doc.li_url+'">'+li_doc.title+'</a></li>';
+    }
+    if(li_doc.type=="Route"){
+      htmltext_route += '<style>.'+querySnapshot.docs[j].id+ ' a:hover{background-image: url('+li_doc.img_2[0]+') ;background-color:rgba(255, 99, 71, 0.6);background-blend-mode:lighten;}</style>'+'<div class="btn '+ querySnapshot.docs[j].id +'"><a href='+ li_doc.li_url +'>'+li_doc.title+'</a></div>';
+      htmltext_route_top +='<li><a href="'+li_doc.li_url+'">'+li_doc.title+'</a></li>';
+    }
+    if(querySnapshot.docs[j].id==url){
+          var doc1 = querySnapshot.docs[j].data();
+          console.log(doc1);
+          for (let i = 0; i < doc1.img_2.length; i++){
+            if(i==0){
+              htmltext += '<div class="img3" style="background-image: url(' +doc1.img_2[i] +') ;"><div class="img3_title">'+ doc1.title + '</div></div>';
+
+              console.log(doc1.title);
+              if(i>=0 && i < doc1.text.length){
+                htmltext += '<h3 class="div_h3">'+doc1.text[i] + '</h3>';
+                console.log(doc1.text[i]);
               }
-              document.getElementById("pagedata").innerHTML = htmltext;
-          } else {
-              // doc.data() will be undefined in this case
-              console.log("No such document!");
+            }
+            else{
+              htmltext += '<div class="img4"><img src="'+doc1.img_2[i] + '"></div>';
+              if(i>=0 && i < doc1.text.length){
+                htmltext += '<h3 class="div_h3">'+doc1.text[i] + '</h3>';
+                console.log(doc1.text[i]);
+                }
+            }
           }
-      }).catch((error) => {
-          console.log("Error getting document:", error);
-      });
-      console.log(last_url);
+        console.log(last_url);
+        document.getElementById("pagedata").innerHTML = htmltext;
+    }
+    document.getElementById("food_menu").innerHTML = htmltext_food;
+    document.getElementById("spot_menu").innerHTML = htmltext_spot;
+    document.getElementById("music_menu").innerHTML = htmltext_music;
+    document.getElementById("culture_menu").innerHTML = htmltext_culture;
+    document.getElementById("route_menu").innerHTML = htmltext_route;
+    document.getElementById("food_menu_top").innerHTML = htmltext_food_top;
+    document.getElementById("spot_menu_top").innerHTML = htmltext_spot_top;
+    document.getElementById("music_menu_top").innerHTML = htmltext_music_top;
+    document.getElementById("culture_menu_top").innerHTML = htmltext_culture_top;
+    document.getElementById("route_menu_top").innerHTML = htmltext_route_top;
+    
   }
+})
+.catch((error) => {
+    console.log("Error getting documents: ", error);
+});
+
+document.getElementById("pagedata").innerHTML = htmltext;
+
+
 
 
   var TxtType = function(el, toRotate, period) {
